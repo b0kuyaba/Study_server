@@ -9,7 +9,8 @@ public class OperationAssignment6 {
 
         int total = kor + eng + math;
         double avg = (double) total / 3;
-        String result = (avg >= 80 ? "통과" : "미통과");
+        boolean pass = avg >= 80;
+        String result = (pass == true ? "통과" : "미통과");
 
         System.out.println("합계: " + total);
         System.out.printf("평균: %.1f\n", avg);
