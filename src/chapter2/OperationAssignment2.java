@@ -7,7 +7,7 @@ public class OperationAssignment2 {
         int num1 = 7;
         int num2 = 2;
 
-        double result = (double) num1 / (double) num2;
+        double result = (double) num1 / num2;
         System.out.println(result);
     }
 }
