@@ -1,6 +1,6 @@
 package operator;
 
-public class OperationEz5 {
+public class OperationEx5 {
 
     public static void main(String[] args) {
         int num = 0B00000101;
