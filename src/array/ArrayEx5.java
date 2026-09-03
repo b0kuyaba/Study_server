@@ -5,8 +5,8 @@ public class ArrayEx5 {
         char[][] arr = new char[3][4];
         char alpha = 'A';
 
-        for (int i = 0; i < 3; i++) {
-            for (int j =0; j < 4; j++) {
+        for (int i = 0; i < arr.length; i++) {
+            for (int j =0; j < arr[i].length; j++) {
                 arr[i][j] = alpha++;
                 System.out.print(arr[i][j] + " ");
             }
