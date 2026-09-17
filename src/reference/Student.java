@@ -7,8 +7,11 @@ public class Student {
     Subject math;
 
     public Student(int studentID, String studentName){
-        this.studentID= studentID;
+        this.studentID = studentID;
         this.studentName = studentName;
+
+        korea = new Subject();
+        math = new Subject();
     }
 
     public void showStudentInfo(){
