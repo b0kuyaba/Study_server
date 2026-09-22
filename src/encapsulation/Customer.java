@@ -13,7 +13,7 @@ public class Customer {
         return budget;
     }
 
-    public void buyPhone(PhoneStore Sting) {
+    public void buyPhone(PhoneStore store) {
         Phone phone = store.sellPhone("아이폰",budget);
         if (phone != null) {
             System.out.println("고객: 핸드폰 구입이 완료되었습니다.");
