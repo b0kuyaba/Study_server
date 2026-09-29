@@ -19,4 +19,8 @@ public class Student {
         subway.take(1050);
         this.money -= 1050;
     }
+
+    public void showInfo() {
+        System.out.println(studentName + "님의 남은 돈은 " + money + "입니다.");
+    }
 }
