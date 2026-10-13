@@ -1,7 +1,7 @@
-package car;
+package singleton.car;
 
 public class CarFactory {
-    private CarFactory instance = new CarFactory();
+    private static CarFactory instance = new CarFactory();
     private CarFactory(){}
 
     public static CarFactory getInstance(){

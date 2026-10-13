@@ -1,4 +1,4 @@
-package car;
+package singleton.car;
 
 public class CarFactoryTest {
     public static void main(String[] args) {
