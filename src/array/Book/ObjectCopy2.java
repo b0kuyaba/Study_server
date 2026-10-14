@@ -11,8 +11,24 @@ public class ObjectCopy2 {
         book[3] = new Book("토지","박경리");
         book[4] = new Book("어린왕자","생택쥐페리");
 
-        System.arraycopy(book,0, bookCopy, 0, book.length);
+        for (int i = 0; i < bookCopy.length; i++) {
+            bookCopy[i] = new Book();
+        }
 
+        for (int i = 0; i < bookCopy.length; i++) {
+            bookCopy[i].setBookName(book[i].getBookname());
+            bookCopy[i].setAuthor(book[i].getAuthor());
+        }
+
+        book[0].setBookName("나목");
+        book[0].setAuthor("박경리");
+
+        System.out.println("\nbook: 첫번째 항목 변경 후");
+        for (int i = 0; i < book.length; i++) {
+            book[i].showBookInfo();
+        };
+
+        System.out.println("\nbookCopy");
         for (int i = 0; i < bookCopy.length; i++) {
             bookCopy[i].showBookInfo();
         }
