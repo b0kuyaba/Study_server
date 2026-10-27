@@ -15,7 +15,7 @@ public class ArrayListTest {
         book.remove(2);
 
         for (int i = 0; i < book.size(); i++) {
-
+            book.get(i).showBookInfo();
         }
 
         System.out.println("\n3번째 항목 제거");
