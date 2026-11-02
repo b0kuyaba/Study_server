@@ -26,9 +26,13 @@ class Rectangle {
         System.out.println("둘레: " + getRerimeter());
     }
 
+}
+
+public class Main1 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Rectangle rectangle = new Rectangle(scanner.nextInt(), scanner.nextInt());
         rectangle.showInfo();
     }
 }
+

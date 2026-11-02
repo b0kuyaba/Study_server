@@ -27,7 +27,9 @@ class VendingMachine {
         System.out.println("가격: " + price);
         System.out.println("남은 재고: " + stock);
     }
+}
 
+public class Main2 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         VendingMachine vendingMachine = new VendingMachine("콜라", 1500, 10);
