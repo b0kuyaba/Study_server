@@ -7,18 +7,18 @@ class Customer {
     int bonusPoint;
     double bonusRatio;
 
-    public Customer() {
-        this.customerGrade = "SILVER";
-        this.bonusRatio = 0.01;
+    public Customer () {
+        customerGrade = "SILVER";
+        bonusRatio = 0.01;
         System.out.println("상위 클래스 Customer() 생성자 호출");
     }
 
-    public Customer(int customerID, String customerName) {
+    public Customer (int customerID, String customerName) {
         this.customerID = customerID;
         this.customerName = customerName;
         this.customerGrade = "SILVER";
         this.bonusRatio = 0.01;
-        System.out.println("상위 클래스 Customer(int, String");
+        System.out.println("상위 클래스 Customer(int, String) 생성자 호출");
     }
 
     public int calcPrice(int price) {
@@ -45,21 +45,26 @@ class VIPCustomer extends Customer{
         System.out.println("하위 클래스 VIPCustomer() 생성자 호출");
     }
 
-    public VIPCustomer(int customerID, String customerName, int agentID) {
+    public VIPCustomer(int customerID, String customerName, int agnetID) {
         super(customerID, customerName);
         saleRatio = 0.1;
         bonusRatio = 0.05;
         customerGrade = "VIP";
-        this.agentID = agentID;
-        System.out.println("하위 클래스 VIPCustomer(int,String) 생성자 호출");
+        this.agentID = agnetID;
+        System.out.println("하위 클래스 VIPCustomer(int, String) 생성자 호출");
     }
-
     public int getAgentID() {
         return agentID;
     }
 
-    public String showVIPInfo () {
-        return super.showCustomerInfo() + "\n담당 ";
+    @Override
+    public int calcPrice(int price) {
+        bonusPoint += price * bonusRatio;
+        return price - (int)(price * saleRatio);
+    }
+
+    public String showVIPInfo() {
+        return super.showCustomerInfo() + "\n담당 사원 아이디는 " + agentID + "입니다.";
     }
 }
 
@@ -73,6 +78,7 @@ public class CustomerTest {
         System.out.println(customerLee.showCustomerInfo());
         System.out.println(customerLee.customerName + "님이 지불해야 할 금액은 " + price + "원입니다.");
 
+        System.out.println();
         VIPCustomer customerKim = new VIPCustomer();
         customerKim.customerID = 10020;
         customerKim.customerName = "김유신";
@@ -82,10 +88,10 @@ public class CustomerTest {
         System.out.println();
         VIPCustomer customerJang = new VIPCustomer(10020, "장보고", 1101);
         customerJang.bonusPoint = 20000;
-        price = customerJang.calcPrice(40000);
-        System.out.println(customerJang.showCustomerInfo());
+//        System.out.println(customerJang.showCustomerInfo());
+        price = customerKim.calcPrice(40000);
+        System.out.println(customerJang.showVIPInfo());
         System.out.println(customerJang.customerName + "님이 지불해야 할 금액은 " + price + "원입니다.");
-
     }
 }
 
